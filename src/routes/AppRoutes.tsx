@@ -1,9 +1,13 @@
 import React from 'react'
 import Header from '../components/Header'
+import Menu from '../components/Menu'
 
 const AppRoutes = () => {
   return (
-    <div><Header/></div>
+    <div>
+      <Header />
+      <Menu />
+      </div>
   )
 }
 
