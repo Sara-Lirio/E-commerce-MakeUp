@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from '../components/Header'
 
 const AppRoutes = () => {
   return (
-    <div>AppRoutes</div>
+    <div><Header/></div>
   )
 }
 

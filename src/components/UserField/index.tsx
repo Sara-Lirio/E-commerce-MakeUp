@@ -16,20 +16,26 @@ const ContainerUserField = styled.div`
     border-top: transparent;
     border-bottom: transparent;
     color: var(--grafite-color);
-    width: 15.1em;
-    padding: 0 1.6em;
+    width: 12.8em;
+    height:2em;
+    padding: 0 1em;
+    cursor:pointer;
 
     h3 {
         letter-spacing: .2em;
         font-weight: 500;
-        font-size:16px;
-        padding-left:1em;
+        font-size: 14px;
+        padding-left:.8em;
+    }
+
+    h3:hover {
+        color: var(--bege-color);
     }
 
     p {
-        font-size:10px;
+        font-size: 8.7px;
         letter-spacing: .11em;
-        padding-left: 1.8em;
+        padding-left: 1.4em;
     }
 `
 
