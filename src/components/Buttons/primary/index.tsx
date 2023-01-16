@@ -4,11 +4,12 @@ import styled, { css } from 'styled-components'
 export interface ButtonPrimaryProps {
     text?: string
     disabled?: boolean
+    tipo?: 'dark'
 }
 
 const StyleButton = styled.button<ButtonPrimaryProps>`
-    background-color: var(--grafite-color);
-    color: var(--branco-color);
+   
+    font-weight:600;
     font-family: var(--font-overpass);
     text-transform: uppercase;
     border:none;
@@ -29,11 +30,20 @@ const StyleButton = styled.button<ButtonPrimaryProps>`
     &:disabled {
         background-color: var(--grafite-color);
     }`}
+
+    ${(props: ButtonPrimaryProps) => props.tipo === 'dark' ? css`
+        background-color: var(--grafite-color);
+        color: var(--branco-color);
+    `: css`
+    background-color: var(--bege-color);
+    color: var(--grafite-color);
+    `}
+
 `
 
-const ButtonPrimary = ({ text, disabled }: ButtonPrimaryProps) => {
+const ButtonPrimary = ({ text, disabled, tipo = 'dark' }: ButtonPrimaryProps) => {
     return (
-        <StyleButton disabled={disabled}>{text}</StyleButton>
+        <StyleButton tipo={tipo} disabled={disabled}>{text}</StyleButton>
     )
 }
 
