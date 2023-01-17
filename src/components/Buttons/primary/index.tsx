@@ -9,13 +9,13 @@ export interface ButtonPrimaryProps {
 
 const StyleButton = styled.button<ButtonPrimaryProps>`
    
-    font-weight:600;
+    font-weight:700;
     font-family: var(--font-overpass);
     text-transform: uppercase;
     border:none;
     border-radius:11px;
-    padding: .4em 1.5em;
-    font-size: 16px;
+    padding: .6em 1.8em;
+    font-size: 20px;
     display:flex;
     cursor:pointer;
 
