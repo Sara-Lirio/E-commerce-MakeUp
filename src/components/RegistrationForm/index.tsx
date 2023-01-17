@@ -25,7 +25,6 @@ const StyledForm = styled.section`
     div{
         display:flex;
         justify-content: space-between;
-
     }
 `
 
@@ -42,7 +41,7 @@ const RegistrationForm = () => {
                     textLabel='E-mail'
                     placeholder='Digite o seu E-mail' />
 
-                <ButtonPrimary text='Cadastrar' tipo='light'/>
+                <ButtonPrimary text='Cadastrar' />
             </div>
         </StyledForm>
     )
