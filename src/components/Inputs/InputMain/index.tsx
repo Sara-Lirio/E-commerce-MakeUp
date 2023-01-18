@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 export interface InputProps {
     placeholder?: string,
     textLabel?: string,
+    type?:string,
     tipo?: 'primario'
 }
 
@@ -51,11 +52,11 @@ const Fieldset = styled.fieldset<InputProps>`
 
 `
 
-const InputMain = ({tipo, placeholder, textLabel}:InputProps) => {
+const InputMain = ({tipo, placeholder,type, textLabel}:InputProps) => {
   return (
     <Fieldset tipo={tipo}>
         <label>{textLabel}</label>
-        <input placeholder={placeholder} />
+        <input placeholder={placeholder} type={type}/>
     </Fieldset>
   )
 }

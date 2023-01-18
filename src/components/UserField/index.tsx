@@ -38,18 +38,23 @@ const ContainerUserField = styled.div`
         letter-spacing: .11em;
         padding-left: 1.4em;
     }
+
+   .linkUser{
+        text-decoration: none;
+        color: var(--grafite-color)
+   }
 `
 
 const UserField = ({account, stateAccount}:AccountProps) => {
     return (
         <ContainerUserField>
             <HiOutlineUserCircle size={30} />
-            {/* <Link to='/'> */}
+            <Link to='/login' className='linkUser'>
             <div>
                 <h3>{account}</h3>
                 <p>{stateAccount}</p>
             </div>
-            {/* </Link> */}
+            </Link>
         </ContainerUserField>
     )
 }
