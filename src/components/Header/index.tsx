@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import Logo from '../../assets/logos/make_up-sf.png'
 import InputSearch from '../Inputs/InputSearch'
 import UserField from '../UserField'
-import { BsCart2 } from "react-icons/bs";
+import { BsCart2 } from "react-icons/bs"
 import { Link } from 'react-router-dom'
+import Offcanvas from 'react-bootstrap/Offcanvas'
+import OffCanvasHome from '../OffCanvas-CardHome'
 
 const HeaderStyle = styled.header`
     display: flex;
@@ -15,13 +17,13 @@ const HeaderStyle = styled.header`
     
     img {
         width: 13em;
-       
     }
 
-    section {
+    button {
         background-color: var(--cinza-color);
         width: 2.7em;
         height: 2.7em;
+        border: none;
         border-radius: 2em;
         display: flex;
         align-items: center;
@@ -30,28 +32,36 @@ const HeaderStyle = styled.header`
         color: var(--grafite-color);
     }
 
-    section:hover{
+    button:hover{
         background-color: var(--bege-color);
     }
-    
 `
 
 const Header = () => {
+    const [showOffCanvas, setShowOffCanvas] = useState(false);
+
+    const handleCloseOffCanvas = () => setShowOffCanvas(false)
+    const handleShowOffCanvas = () => setShowOffCanvas(true)
+
     return (
         <HeaderStyle>
             <Link to='/'>
-            <figure>
-                <img src={Logo} />
-            </figure>
+                <figure>
+                    <img src={Logo} />
+                </figure>
             </Link>
-            <InputSearch placeholder='Pesquise aqui'/>
+            <InputSearch placeholder='Pesquise aqui' />
             <UserField account='Minha Conta'
-            stateAccount='Entre ou Cadastre-se'/>
-            {/* <Link to='/perfil'> */}
-            <section>
-                <BsCart2 size={25}/>
-            </section>
-            {/* </Link> */}
+                stateAccount='Entre ou Cadastre-se' />
+
+            <button onClick={handleShowOffCanvas}>
+                <BsCart2 size={25} />
+            </button>
+
+            <Offcanvas show={showOffCanvas} onHide={handleCloseOffCanvas} placement='end'>
+                <OffCanvasHome />
+            </Offcanvas>
+
         </HeaderStyle>
     )
 }
