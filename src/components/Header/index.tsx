@@ -4,6 +4,7 @@ import Logo from '../../assets/logos/make_up-sf.png'
 import InputSearch from '../Inputs/InputSearch'
 import UserField from '../UserField'
 import { BsCart2 } from "react-icons/bs";
+import { Link } from 'react-router-dom'
 
 const HeaderStyle = styled.header`
     display: flex;
@@ -38,9 +39,11 @@ const HeaderStyle = styled.header`
 const Header = () => {
     return (
         <HeaderStyle>
+            <Link to='/'>
             <figure>
                 <img src={Logo} />
             </figure>
+            </Link>
             <InputSearch placeholder='Pesquise aqui'/>
             <UserField account='Minha Conta'
             stateAccount='Entre ou Cadastre-se'/>
