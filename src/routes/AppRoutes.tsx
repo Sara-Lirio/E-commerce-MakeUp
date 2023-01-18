@@ -1,19 +1,22 @@
 import React from 'react'
-import CarouselHome from '../components/Carousel'
-import Categories from '../components/Categories'
-import CouponSection from '../components/CouponSection'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import Footer from '../components/Footer'
+
 import Header from '../components/Header'
 import Menu from '../components/Menu'
+import Home from '../pages/Home'
 
 const AppRoutes = () => {
   return (
-    <div>
-      <Header />
-      <Menu />
-      <CarouselHome/>
-      <Categories/>
-      <CouponSection/>
-    </div>
+    <BrowserRouter>
+        <Header />
+        <Menu />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+       
+      </Routes>
+        <Footer/>
+    </BrowserRouter>
   )
 }
 

@@ -21,7 +21,7 @@ const Fieldset = styled.fieldset<InputProps>`
         font-family: var(--font-overpass);
         text-align: center;
         background-color: transparent;
-        width: 25em;
+        width: 20em;
     }
 
    

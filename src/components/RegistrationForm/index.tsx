@@ -20,11 +20,13 @@ const StyledForm = styled.section`
         font-size: 20px;
         letter-spacing: 2px;
         font-weight: 600;
+        
     }
 
     div{
         display:flex;
         justify-content: space-between;
+        align-items: center;
     }
 `
 
@@ -41,7 +43,7 @@ const RegistrationForm = () => {
                     textLabel='E-mail'
                     placeholder='Digite o seu E-mail' />
 
-                <ButtonPrimary text='Cadastrar' />
+                <ButtonPrimary text='Cadastrar' tipo='' />
             </div>
         </StyledForm>
     )
