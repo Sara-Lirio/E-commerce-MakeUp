@@ -15,6 +15,10 @@ const StyledFooter = styled.footer`
         width: 12em;
     }
 
+    ul {
+        padding-left: 0;
+    }
+
     .products li{
         padding-top: .6em
     }
