@@ -14,8 +14,8 @@ const StyleButton = styled.button<ButtonPrimaryProps>`
     text-transform: uppercase;
     border:none;
     border-radius:11px;
-    padding: .6em 1.8em;
-    font-size: 20px;
+    padding: .5em 1.8em;
+    font-size: 18px;
     display:flex;
     cursor:pointer;
 
