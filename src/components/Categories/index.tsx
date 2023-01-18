@@ -9,13 +9,13 @@ import styled from 'styled-components'
 
 const StyledCategories = styled.section`
     display:flex;
-    margin: 0 10em;
+    margin: 0 16em;
     justify-content: space-around;
 
     figure {
         background-size: cover;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     p {

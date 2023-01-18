@@ -10,11 +10,11 @@ const HeaderStyle = styled.header`
     justify-content:space-around;
     align-items:center;
     padding: .3em 2em;
-    margin-right:2em;
+    margin: 0 5.6em;
     
     img {
         width: 13em;
-        margin-left:.8em;
+       
     }
 
     section {

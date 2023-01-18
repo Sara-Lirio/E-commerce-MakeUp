@@ -8,12 +8,14 @@ import banner3 from '../../assets/images/banner_3.png';
 import styled from 'styled-components';
 import ButtonPrimary from '../Buttons/primary';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const ContainerCarousel = styled.section`
-   margin: 0 5em;
+   margin: 0 8em;
    font-family: var(--font-overpass);
 
    .carousel-inner {
-    height: 520px;
+    height: 470px;
    }
 
    .imageBanner1 {
@@ -61,12 +63,12 @@ const ContainerCarousel = styled.section`
    }
 
    .carousel-indicators {
-    margin-bottom: 7em
+    margin-bottom: 4em
    }
 
    .carousel-indicators button {
-    width: 1em;
-    height: 1em;
+    width: .8em;
+    height: .8em;
     border:none;
     border-radius: 1em
    }

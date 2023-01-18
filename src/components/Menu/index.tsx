@@ -6,7 +6,7 @@ const ContainerMenu = styled.div`
     color: var(--gelo-color);
     font-family: var(--font-overpass);
     text-transform: uppercase;
-    margin: 0 5em;
+    margin: 0 8em 1em 8em;
     padding: .5em 0;
     
     ul {

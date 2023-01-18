@@ -26,6 +26,7 @@ const ContainerUserField = styled.div`
         font-weight: 500;
         font-size: 14px;
         padding-left:.8em;
+        margin-bottom: 0;
     }
 
     h3:hover {
