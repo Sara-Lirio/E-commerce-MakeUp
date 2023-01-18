@@ -24,7 +24,7 @@ const StyledFooter = styled.footer`
     }
 
     .socialMedia{
-        padding-left: 1em;
+        padding-left: 0em;
         color: #867B7B;
     }
 
@@ -74,7 +74,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <ul className='brands'><br/>
+                <ul className='brands'><br />
                     <li>boosh</li>
                     <li>burt's bees</li>
                     <li>butter london</li>
@@ -85,8 +85,8 @@ const Footer = () => {
             <div>
                 <h3>Nossas redes</h3>
                 <div className='socialMedia'>
-                <GrFacebookOption/> <GrInstagram/> <GrTwitter/> <GrMail/> 
-            </div>
+                    <GrFacebookOption /> <GrInstagram /> <GrTwitter /> <GrMail />
+                </div>
                 <h3>Atendimento ao Cliente</h3>
                 <ul>
                     <li>Chat online</li>
