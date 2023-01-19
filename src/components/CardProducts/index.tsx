@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ButtonSecondary from '../Buttons/secondary'
 
 export interface CardProductsProps {
+    id?: null
     image_link?: string
     category?: string
     name?: string
@@ -13,13 +14,20 @@ export interface CardProductsProps {
 const StyleCardProducts = styled.div`
     font-family: var(--font-overpass);
     width:10em;
+    height: 23em;
     display:flex;
     flex-direction: column;
+    justify-content: space-around;
 
     img {
-        width: 10em;
+        max-width: 10em;
+        max-height:10em;
+        width: auto;
+        height: auto;
         cursor: pointer;
         transition: 9ms;
+        margin: auto;
+        display: block;
     }
 
     img:hover {
@@ -30,28 +38,31 @@ const StyleCardProducts = styled.div`
     p {
         color: #B4A7A7;
         margin-left: .5em;
+        font-size:14px;
     }
 
     h2, h3 {
         color: var(--grafite-color);
         text-align: center;
-        margin-top: .5em;
+        
     }
 
     h3 {
         cursor: pointer;
         font-weight: 600;
+        font-size: 18px;
     }
 
     h2 {
         font-weight: 300;
         margin-bottom: .5em;
+        font-size: 19px;
     }
 `
 
-const CardProducts = ({ image_link, category, name, price }: CardProductsProps) => {
+const CardProducts = ({ id, image_link, category, name, price }: CardProductsProps) => {
     return (
-        <StyleCardProducts>
+        <StyleCardProducts key={id}>
             <figure>
                 <img src={image_link} />
             </figure>

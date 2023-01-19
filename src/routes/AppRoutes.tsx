@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
+import ProductsPage from '../pages/Products'
 import Registration from '../pages/Registration'
 
 const AppRoutes = () => {
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/cadastre-se' element={<Registration/>} />
+        <Route path='/produtos' element={<ProductsPage/>} />
       </Routes>
         <Footer/>
     </BrowserRouter>

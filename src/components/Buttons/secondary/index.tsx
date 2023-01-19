@@ -17,9 +17,9 @@ const StyleButton = styled.button`
     padding: .3em 1.7em;
     cursor:pointer;
 
-    -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.4);
-	-moz-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.4);
-	box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.4);
+    -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.2);
+	-moz-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.2);
+	box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.2);
 
     &:hover {
         background-color: var(--grafite-color);
