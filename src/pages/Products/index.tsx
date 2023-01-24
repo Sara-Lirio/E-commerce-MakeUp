@@ -46,14 +46,14 @@ const ProductsPage = () => {
       {!loading && products.length > 0 &&
       <SectionProducts>
         {products.map((item, index)=>(
-          
+          item.image_link ? 
           <CardProducts 
           key={index}
           name={item.name}
           price={item.price}
           image_link={item.image_link}
           category={item.category}
-          /> 
+          /> : null
         ))}
         </SectionProducts>
       }

@@ -10,7 +10,7 @@ const Fieldset = styled.fieldset`
   border: .1em solid var(--grafite-color);
   border-radius: .4em;
   padding: .2em 0 .2em 1em;
-  width: 36em;
+  width: 34em;
   height:2em;
   font-family: var(--font-overpass);
   color: var(--grafite-color);
@@ -20,7 +20,7 @@ const Fieldset = styled.fieldset`
 
   input{
     border:none;
-    width: 36em;
+    width: 34em;
     outline:none;
     font-size:.9em;
     color: var(--grafite-color);

@@ -36,7 +36,7 @@ const ContainerCarousel = styled.section`
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1em;
-    margin-left: 20em;
+    margin-left: 18em;
    }
 
    .divBanner2{

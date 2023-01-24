@@ -6,6 +6,7 @@ import ProductsSectionNyx from '../../components/ProductsSection_nyx'
 import RegistrationForm from '../../components/RegistrationForm'
 import BannerNyx from '../../assets/images/nyx-banner.webp'
 import styled from 'styled-components'
+import ProductsSectionClinique from '../../components/ProductsSection_clinique'
 
 const ImgBanner = styled.div`
     margin: 0 5em;
@@ -13,7 +14,7 @@ const ImgBanner = styled.div`
     justify-content:center;
     
     img {
-        width: 90%
+        width: 92%
     }
     
 `
@@ -29,7 +30,7 @@ const Home = () => {
             <ImgBanner>
                 <img src={BannerNyx} />
             </ImgBanner>
-
+            <ProductsSectionClinique />
             <RegistrationForm />
 
         </>

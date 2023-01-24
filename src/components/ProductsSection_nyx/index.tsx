@@ -74,9 +74,8 @@ const ProductsSectionNyx = () => {
         console.log(products);
     }, []);
 
-    const handleLeft = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        carousel.currentTarget -= carousel.currentTarget.offsetWidth;
+    const handleLeft = () => {
+
     }
 
     const handleRight = () => {
