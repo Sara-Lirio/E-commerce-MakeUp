@@ -5,6 +5,8 @@ import { Product } from '../../types/Product';
 import styled from 'styled-components'
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Bg_clinique from '../../assets/images/background_clinique.jpg'
+import LogoClinique from '../../assets/images/Clinique_logo.svg.png'
+import Loading from '../Loading';
 
 const Container = styled.main`
   margin: 2em 8em;
@@ -12,16 +14,28 @@ const Container = styled.main`
   background-size: cover;
   background-repeat: no-repeat;
   height: 25em;
-  
-  section {
-    display: flex;
-    justify-content: space-around;
-    padding: .9em;
-    align-items: center;
-    width: 36em;
-  }
+`
+const LoadClinique = styled.main`
+  margin: 2em 8em;
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 
-  .buttonContainer {
+  img {
+    width: 20%;
+    margin-top: 2em
+  }
+  
+`
+const SectionProducts = styled.section`
+display: flex;
+justify-content: space-around;
+padding: .9em;
+align-items: center;
+width: 36em;
+
+.buttonContainer {
     background-color: #F1f1f1;
     border-radius: 2em;
     width: 2.3em;
@@ -33,7 +47,6 @@ const Container = styled.main`
 	-moz-box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.3);
 	box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.3);
   }
-
 `
 
 const ProductsSectionClinique = () => {
@@ -43,46 +56,46 @@ const ProductsSectionClinique = () => {
 
     async function request() {
         await api.get('/products.json').then(({ data }) => {
-            setProducts(data)
-            console.log(setProducts)
+            setProducts(data);
         })
     }
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(true);
-            request()
+            request();
             setLoading(false);
-        }, 3000)
-        console.log(products);
+        }, 0);
     }, []);
 
     return (
+        <>
+        {products.length > 0  ? 
         <Container>
-
-            <section>
-            <button className='buttonContainer'
-                         >
-                            <GrPrevious />
-                        </button>
-            {products.map((item, index) => (
-                item.brand == 'clinique'  &&
-                item.product_type == 'bronzer' &&
-                item.price == 28 ?
-                    <div>
-                        <CardProducts
-                            key={index}
-                            name={item.name}
-                            price={item.price}
-                            image_link={item.image_link}
-                            category={item.product_type}
-                        /></div> : null
-            ))}
-             <button className='buttonContainer'>
-                            <GrNext />
-                        </button>
-            </section>
+            <SectionProducts>
+                <button className='buttonContainer'>
+                    <GrPrevious />
+                </button>
+                {products.map((item, index) => (
+                    item.brand == 'clinique' &&
+                        item.product_type == 'bronzer' &&
+                        item.price == 28 ?
+                        <div>
+                            <CardProducts
+                                key={index}
+                                name={item.name}
+                                price={item.price}
+                                image_link={item.image_link}
+                                category={item.product_type}
+                            /></div> : null
+                ))}
+                <button className='buttonContainer'>
+                    <GrNext />
+                </button>
+            </SectionProducts>
         </Container>
+    : <LoadClinique><Loading/><img src={LogoClinique}/></LoadClinique>}
+    </>
     )
 }
 
