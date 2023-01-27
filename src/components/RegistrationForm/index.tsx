@@ -43,7 +43,7 @@ const RegistrationForm = () => {
                     textLabel='E-mail'
                     placeholder='Digite o seu E-mail' />
 
-                <ButtonPrimary text='Cadastrar' tipo='' />
+                <ButtonPrimary text='Cadastrar' tipo='light' />
             </div>
         </StyledForm>
     )
