@@ -53,7 +53,7 @@ const StyledRegistration = styled.main`
 const Registration = () => {
     return (
         <StyledRegistration>
-            <img src={Banner} />
+            
             <section>
                 <h3>Cadastre-se</h3>
                 <InputMain textLabel='Nome'

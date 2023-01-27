@@ -2,13 +2,15 @@ import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styled from 'styled-components'
 
+
+
 const ContainerMenu = styled.div`
     background-color: var(--grafite-color);
     color: var(--gelo-color);
     font-family: var(--font-overpass);
     text-transform: uppercase;
-    margin: 0 9em 1em 9em;
-    padding: .5em 0;
+    margin-bottom: 1em;
+    padding: .5em 2em;
     font-size: 14px;
     
     ul {

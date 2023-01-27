@@ -70,7 +70,7 @@ const ProductsSectionNyx = () => {
             setLoading(true);
             request()
             setLoading(false);
-        }, 3000)
+        }, 0)
         console.log(products);
     }, []);
 

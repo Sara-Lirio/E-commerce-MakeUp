@@ -4,6 +4,9 @@ import api from '../../service/api';
 import { Product } from '../../types/Product';
 import styled from 'styled-components'
 
+export interface Props {
+  criterion?: boolean;
+}
 
 const Container = styled.main`
   margin: 2em 8em;
@@ -14,10 +17,9 @@ const SectionProducts = styled.section`
   flex-wrap:wrap;
   justify-content: space-between;
   align-items: baseline;
-  
 `
 
-const ProductsPage = () => {
+const ProductsPage = ({criterion}:Props) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -36,8 +38,6 @@ const ProductsPage = () => {
     console.log(products);
   }, []);
 
-
-
   return (
     <Container>
      {loading &&
@@ -46,7 +46,7 @@ const ProductsPage = () => {
       {!loading && products.length > 0 &&
       <SectionProducts>
         {products.map((item, index)=>(
-          item.image_link ? 
+          {criterion} ? 
           <CardProducts 
           key={index}
           name={item.name}

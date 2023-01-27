@@ -90,6 +90,7 @@ const ContainerCarousel = styled.section`
     width: 6em;
     position: absolute
    }
+
 `
 
 const CarouselHome = () => {

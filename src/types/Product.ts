@@ -4,5 +4,5 @@ export type Product = {
     name: string;
     price: number;
     brand?: string;
-    product_type?: string
+    product_type?: string;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ButtonSecondary from '../Buttons/secondary'
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from 'react-router-dom';
 
 const StyledOffCanvas = styled.section`
     color: var(--grafite-color);
@@ -44,14 +45,16 @@ const OffCanvasHome = () => {
   return (
     <StyledOffCanvas>
       <Offcanvas.Header closeButton>
-    
+
       </Offcanvas.Header>
       <h2>Meu Carrinho</h2>
       <div>
         <p>VOCÊ NÃO TEM NENHUM PRODUTO NO CARRINHO<br /><br />
           Quando você escolher seus produtos, mostraremos tudo aqui.</p>
       </div>
-      <ButtonSecondary text='Ver carrinho' />
+      <Link to='/shopping'>
+        <ButtonSecondary text='Ver carrinho' />
+      </Link>
 
     </StyledOffCanvas>
   )
