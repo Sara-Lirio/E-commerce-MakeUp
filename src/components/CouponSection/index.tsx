@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import saleImage from '../../assets/images/sale.png'
+import saleImage from '../../assets/gifs/coupon.gif'
 
 const StyledCoupon = styled.section`
     font-family: var(--font-overpass);
@@ -27,6 +27,7 @@ const StyledCoupon = styled.section`
 `
 
 const CouponSection = () => {
+
   return (
     <StyledCoupon>
         <h2>Aproveite o desconto na sua primeira compra</h2>
