@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 export interface ButtonPrimaryProps {
     text?: string
     disabled?: boolean
-    tipo?: 'dark'
+    tipo?: 'dark' | 'light'
 }
 
 const StyleButton = styled.button<ButtonPrimaryProps>`

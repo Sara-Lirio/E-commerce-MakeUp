@@ -108,7 +108,7 @@ const CarouselHome = () => {
                         <div className='divBanner1'>
                             <h3>Saint Cosmetics Bronzer</h3>
                             <p>Natural | Vegan | Gluten Free</p>
-                            <ButtonPrimary text='compre agora' tipo=' ' />
+                            <ButtonPrimary text='compre agora' tipo='light' />
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -120,7 +120,7 @@ const CarouselHome = () => {
                     />
                     <Carousel.Caption  className='divBanner2'>
                         
-                        <ButtonPrimary text='compre aqui' tipo=' ' />
+                        <ButtonPrimary text='compre aqui' tipo='light' />
                         
                         <img src={imageBanner2} className='imageBanner2' />
                     </Carousel.Caption>
