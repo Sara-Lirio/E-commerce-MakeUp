@@ -80,7 +80,7 @@ const Registration = () => {
                     tipo='primario'
                     type='password' /><br />
                 <div>
-                <ButtonPrimary text='Cadastrar' tipo='' />
+                <ButtonPrimary text='Cadastrar' tipo='light' />
 
                 <p>Já possue conta?
                     <Link to='/login'
