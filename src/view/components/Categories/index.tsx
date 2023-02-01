@@ -57,30 +57,30 @@ const StyledCategories = styled.section`
 
 const Categories = () => {
     const navigate = useNavigate();
-
+    
     return (
         <StyledCategories>
-            <div onClick={() => navigate(`/products/product_type=bronzer`)}>
+            <div onClick={() => navigate(`/products/bronzer`)}>
                 <figure className='image1'></figure>
                 <p>bronze</p>
             </div>
-            <div onClick={() => navigate(`/products/product_type=nail_polish`)}>
+            <div onClick={() => navigate(`/products/nail_polish`)}>
                 <figure className='image2'></figure>
                 <p>esmalte</p>
             </div>
-            <div onClick={() => navigate(`/products/product_type=eyeshadow`)}>
+            <div onClick={() => navigate(`/products/eyeshadow`)}>
                 <figure className='image3'></figure>
                 <p>sombra</p>
             </div>
-            <div onClick={() => navigate(`/products/product_type=lipstick`)}>
+            <div onClick={() => navigate(`/products/lipstick`)}>
                 <figure className='image4'></figure>
                 <p>batom</p>
             </div>
-            <div onClick={() => navigate(`/products/product_type=foundation`)}>
+            <div onClick={() => navigate(`/products/foundation`)}>
                 <figure className='image5'></figure>
                 <p>base</p>
             </div>
-            <div onClick={() => navigate(`/products/product_type=blush`)}>
+            <div onClick={() => navigate(`/products/blush`)}>
                 <figure className='image6'></figure>
                 <p>blush</p>
             </div>

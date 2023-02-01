@@ -23,8 +23,8 @@ const Product_Type = () => {
   const { product_type } = useParams();
 
   async function request() {
-    await api.get('/products?').then(({ data }) => {
-      setProducts(data)
+    await api.get(`/products.json?product_type=${product_type}`).then(({ data }) => {
+      setProducts(data);
       console.log(setProducts(data))
     })
   }
@@ -43,14 +43,14 @@ const Product_Type = () => {
       {products.length > 0 ?
       <SectionProducts>
         {products.map((item:any)=>(
-          // item.product_type == product_type ? 
+          item.product_type == product_type ? 
           <CardProduct 
           name={item.name}
           price={item.price}
           image_link={item.image_link}
           category={item.category}
           />
-          //  : null
+           : null
         ))}
         </SectionProducts>
       : <Loading/> }

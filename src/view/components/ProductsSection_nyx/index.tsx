@@ -70,7 +70,9 @@ const ProductsSectionNyx = ({ loading, products }: SectionProps) => {
                             <GrPrevious />
                         </button>
                         {products.map((item: any, id: number) => (
-                            item.brand == 'nyx' && item.price > 5 && item.category == 'concealer' && item.product_type == 'foundation' ?
+                            item.brand == 'nyx' && item.price > 5 && 
+                            item.category == 'concealer' && 
+                            item.product_type == 'foundation' ?
                                 <div>
                                     <CardProduct
                                         key={id}
