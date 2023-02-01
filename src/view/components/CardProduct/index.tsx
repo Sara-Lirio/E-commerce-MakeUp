@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link, LinkProps } from 'react-router-dom'
 import styled from 'styled-components'
 import ButtonSecondary from '../Buttons/secondary'
 
 export interface CardProductsProps {
-    id?: null
+    id?: number
     image_link?: string
     category?: string
     name?: string
     price?: number
+    onClick?: () => void
+    
 }
 
 const StyleCardProducts = styled.div`
@@ -58,7 +61,7 @@ const StyleCardProducts = styled.div`
     }
 `
 
-const CardProducts = ({ id, image_link, category, name, price }: CardProductsProps) => {
+const CardProduct = ({ id, image_link, category, name, price, onClick}: CardProductsProps) => {
     return (
         <StyleCardProducts key={id}>
             <figure>
@@ -67,9 +70,11 @@ const CardProducts = ({ id, image_link, category, name, price }: CardProductsPro
             <p>{category}</p>
             <h3>{name}</h3>
             <h2>$ {price}</h2>
-            <ButtonSecondary text='ver mais' />
+                <ButtonSecondary
+                    onClick={onClick}
+                    text='ver mais' />
         </StyleCardProducts>
     )
 }
 
-export default CardProducts
+export default CardProduct
