@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
-import CardProducts from '../../components/CardProducts';
-import api from '../../service/api';
-import { Product } from '../../types/Product';
+import React from 'react'
+import CardProduct from '../CardProduct';
 import styled from 'styled-components'
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Bg_clinique from '../../../assets/images/background_clinique.jpg'
 import LogoClinique from '../../../assets/images/Clinique_logo.svg.png'
 import Loading from '../Loading';
+import { SectionProps } from '../ProductsSection_nyx';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.main`
   margin: 2em 8em;
@@ -49,24 +49,8 @@ width: 36em;
   }
 `
 
-const ProductsSectionClinique = () => {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(false);
-    const carousel = useRef(null);
-
-    async function request() {
-        await api.get('/products.json').then(({ data }) => {
-            setProducts(data);
-        })
-    }
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(true);
-            request();
-            setLoading(false);
-        }, 0);
-    }, []);
+const ProductsSectionClinique = ({loading, products}: SectionProps) => {
+  const navigate = useNavigate();
 
     return (
         <>
@@ -76,17 +60,18 @@ const ProductsSectionClinique = () => {
                 <button className='buttonContainer'>
                     <GrPrevious />
                 </button>
-                {products.map((item, index) => (
+                {products.map((item:any, id:number) => (
                     item.brand == 'clinique' &&
                         item.product_type == 'bronzer' &&
                         item.price == 28 ?
                         <div>
-                            <CardProducts
-                                key={index}
+                            <CardProduct
+                                key={item.id}
                                 name={item.name}
                                 price={item.price}
                                 image_link={item.image_link}
                                 category={item.product_type}
+                                onClick={() => navigate(`/products/${item.id}`)}
                             /></div> : null
                 ))}
                 <button className='buttonContainer'>
@@ -94,7 +79,7 @@ const ProductsSectionClinique = () => {
                 </button>
             </SectionProducts>
         </Container>
-    : <LoadClinique><Loading/><img src={LogoClinique}/></LoadClinique>}
+    : <LoadClinique></LoadClinique>}
     </>
     )
 }

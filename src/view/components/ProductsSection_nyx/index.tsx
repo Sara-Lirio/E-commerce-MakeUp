@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
-import CardProducts from '../../components/CardProducts';
-import api from '../../service/api';
-import { Product } from '../../types/Product';
+import React from 'react'
+import CardProduct from '../CardProduct';
 import styled from 'styled-components'
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { useNavigate } from 'react-router-dom';
+export interface SectionProps {
+    loading?: any;
+    products?: any;
+    onClick?: () => void;
+}
 
 const Container = styled.main`
   margin: 2em 8em;
@@ -53,60 +57,32 @@ const SectionProducts = styled.section`
    }
 `
 
-const ProductsSectionNyx = () => {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(false);
-    const carousel = useRef(null);
-
-    async function request() {
-        await api.get('/products.json').then(({ data }) => {
-            setProducts(data)
-            console.log(setProducts)
-        })
-    }
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(true);
-            request()
-            setLoading(false);
-        }, 0)
-        console.log(products);
-    }, []);
-
-    const handleLeft = () => {
-
-    }
-
-    const handleRight = () => {
-
-    }
+const ProductsSectionNyx = ({ loading, products }: SectionProps) => {
+    const navigate = useNavigate();
 
     return (
         <Container>
             <h2>O produto certo para sua pele</h2>
-            <div className='carouselProducts' ref={carousel}>
+            <div className='carouselProducts'>
                 {!loading && products.length > 0 &&
                     <SectionProducts>
-                        <button className='buttonContainer'
-                            onClick={handleLeft}>
+                        <button className='buttonContainer'>
                             <GrPrevious />
                         </button>
-
-                        {products.map((item, index) => (
-                            item.brand == 'nyx' && item.price > 5 && item.category == 'concealer' && item.product_type == 'foundation'?
+                        {products.map((item: any, id: number) => (
+                            item.brand == 'nyx' && item.price > 5 && item.category == 'concealer' && item.product_type == 'foundation' ?
                                 <div>
-                                    <CardProducts
-                                        key={index}
+                                    <CardProduct
+                                        key={id}
                                         name={item.name}
                                         price={item.price}
                                         image_link={item.image_link}
                                         category={item.brand}
+                                        id={item.id}
+                                        onClick={() => navigate(`/products/${item.id}`)}
                                     /></div> : null
                         ))}
-
-                        <button className='buttonContainer'
-                            onClick={handleRight}>
+                        <button className='buttonContainer'>
                             <GrNext />
                         </button>
                     </SectionProducts>
