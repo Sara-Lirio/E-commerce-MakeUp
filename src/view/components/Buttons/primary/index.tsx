@@ -5,6 +5,7 @@ export interface ButtonPrimaryProps {
     text?: string
     disabled?: boolean
     tipo?: 'dark' | 'light'
+    onClick ?: () => void
 }
 
 const StyleButton = styled.button<ButtonPrimaryProps>`
@@ -39,9 +40,12 @@ const StyleButton = styled.button<ButtonPrimaryProps>`
     `}
 `
 
-const ButtonPrimary = ({ text, disabled, tipo = 'dark' }: ButtonPrimaryProps) => {
+const ButtonPrimary = ({ text, disabled, tipo = 'dark', onClick }: ButtonPrimaryProps) => {
     return (
-        <StyleButton tipo={tipo} disabled={disabled}>{text}</StyleButton>
+        <StyleButton tipo={tipo} 
+        disabled={disabled}
+        onClick={onClick}
+        >{text}</StyleButton>
     )
 }
 
