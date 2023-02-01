@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 export interface ButtonSecundaryProps {
-  text?: string
+  text?: string;
+  onClick ?: () => void
 }
 
 const StyleButton = styled.button`
@@ -27,9 +28,9 @@ const StyleButton = styled.button`
   }
 `
 
-const ButtonSecondary = ({ text }: ButtonSecundaryProps) => {
+const ButtonSecondary = ({ text, onClick }: ButtonSecundaryProps) => {
   return (
-    <StyleButton>{text}</StyleButton>
+    <StyleButton onClick={onClick}>{text}</StyleButton>
   )
 }
 
