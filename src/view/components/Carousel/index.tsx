@@ -8,6 +8,7 @@ import banner3 from '../../../assets/images/banner_3.png';
 import styled from 'styled-components';
 import ButtonPrimary from '../Buttons/primary';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const ContainerCarousel = styled.section`
    margin: 0 8em;
@@ -92,6 +93,8 @@ p {
 `
 
 const CarouselHome = () => {
+    const navigate = useNavigate();
+
     return (
         <ContainerCarousel>
             <Carousel>
@@ -106,7 +109,8 @@ const CarouselHome = () => {
                         <div className='divBanner1'>
                             <h3>Saint Cosmetics Bronzer</h3>
                             <p>Natural | Vegan | Gluten Free</p>
-                            <ButtonPrimary text='compre agora' tipo='light' />
+                            <ButtonPrimary text='compre agora' tipo='light'
+                            onClick={() => navigate(`/products/507`)} />
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -118,7 +122,8 @@ const CarouselHome = () => {
                     />
                     <Carousel.Caption className='divBanner2'>
 
-                        <ButtonPrimary text='compre aqui' tipo='light' />
+                        <ButtonPrimary text='compre aqui' tipo='light'
+                        onClick={() => navigate(`/products/661`)}/> 
 
                         <img src={imageBanner2} className='imageBanner2' />
                     </Carousel.Caption>
@@ -131,7 +136,8 @@ const CarouselHome = () => {
                     />
 
                     <Carousel.Caption className='divBanner3'>
-                        <ButtonPrimary text='Compre agora' />
+                        <ButtonPrimary text='Compre agora' 
+                        onClick={() => navigate(`/products/436`)}/>
                     </Carousel.Caption>
 
                 </Carousel.Item>
