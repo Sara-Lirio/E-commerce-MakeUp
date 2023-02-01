@@ -5,7 +5,9 @@ export interface InputProps {
     placeholder?: string,
     textLabel?: string,
     type?:string,
-    tipo?: 'primario'
+    tipo?: 'primario',
+    value?: string,
+    onChange?: (e: any) => void;
 }
 
 const Fieldset = styled.fieldset<InputProps>`
@@ -47,11 +49,14 @@ const Fieldset = styled.fieldset<InputProps>`
     }
 `
 
-const InputMain = ({tipo, placeholder,type, textLabel}:InputProps) => {
+const InputMain = ({tipo, placeholder,type, textLabel,value, onChange}:InputProps) => {
   return (
     <Fieldset tipo={tipo}>
         <label>{textLabel}</label>
-        <input placeholder={placeholder} type={type}/>
+        <input placeholder={placeholder} 
+        type={type} 
+        value={value}
+        onChange={onChange}/>
     </Fieldset>
   )
 }
