@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonPrimary from '../../components/Buttons/primary'
 import InputMain from '../../components/Inputs/InputMain'
@@ -50,46 +50,66 @@ const StyledRegistration = styled.main`
 `
 
 const Registration = () => {
+    const [name, setName] = useState('');
+    const [address, setAddress] = useState('');
+    const [complement, setComplement] = useState('');
+    const [cep, setCep] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
     return (
         <StyledRegistration>
-            
             <section>
                 <h3>Cadastre-se</h3>
                 <InputMain textLabel='Nome'
                     placeholder='Digite o seu nome completo'
-                    tipo='primario' />
+                    tipo='primario' 
+                    value={name}
+                    onChange={(e)=> setName(e.target.value)}/>
                 <InputMain textLabel='Endereço'
                     placeholder='Digite o sua rua/av. e número'
-                    tipo='primario' />
+                    tipo='primario' 
+                    value={address}
+                    onChange={(e)=> setAddress(e.target.value)}/>
                 <InputMain textLabel='Complemento'
                     placeholder='Apto/Casa, bloco'
-                    tipo='primario' />
+                    tipo='primario' 
+                    value={complement}
+                    onChange={(e)=> setComplement(e.target.value)}/>
                 <InputMain textLabel='CEP'
                     placeholder='Digite o seu CEP'
-                    tipo='primario' /><br />
+                    tipo='primario' 
+                    value={cep}
+                    onChange={(e)=> setCep(e.target.value)}/>
+                    <br />
                 <InputMain textLabel='E-mail'
                     placeholder='seuemail@email.com'
-                    tipo='primario' />
+                    tipo='primario' 
+                    value={email}
+                    onChange={(e)=> setEmail(e.target.value)}/>
                 <InputMain textLabel='Senha'
                     placeholder='********'
                     tipo='primario'
-                    type='password' />
+                    type='password' 
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}/>
                 <InputMain textLabel='Confirmar senha'
                     placeholder='********'
                     tipo='primario'
                     type='password' /><br />
                 <div>
-                <ButtonPrimary text='Cadastrar' tipo='light' />
+                    <ButtonPrimary text='Cadastrar' tipo='light' 
+                        />
 
-                <p>Já possue conta?
-                    <Link to='/login'
-                        className='linkLogin'>
-                        Entrar
-                    </Link>
-                </p>
+                    <p>Já possue conta?
+                        <Link to='/login'
+                            className='linkLogin'>
+                            Entrar
+                        </Link>
+                    </p>
                 </div>
             </section>
-
         </StyledRegistration>
     )
 }
