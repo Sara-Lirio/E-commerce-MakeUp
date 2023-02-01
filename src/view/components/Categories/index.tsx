@@ -6,6 +6,7 @@ import image4 from '../../../assets/icons/4.png'
 import image5 from '../../../assets/icons/5.png'
 import image6 from '../../../assets/icons/6.png'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 const StyledCategories = styled.section`
     display:flex;
@@ -23,6 +24,10 @@ const StyledCategories = styled.section`
         color: #888585;
         text-align: center;
         font-weight: 700;
+    }
+
+    div {
+        cursor: pointer
     }
 
     .image1 {
@@ -51,29 +56,31 @@ const StyledCategories = styled.section`
 `
 
 const Categories = () => {
+    const navigate = useNavigate();
+
     return (
         <StyledCategories>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=bronzer`)}>
                 <figure className='image1'></figure>
                 <p>bronze</p>
             </div>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=nail_polish`)}>
                 <figure className='image2'></figure>
                 <p>esmalte</p>
             </div>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=eyeshadow`)}>
                 <figure className='image3'></figure>
                 <p>sombra</p>
             </div>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=lipstick`)}>
                 <figure className='image4'></figure>
                 <p>batom</p>
             </div>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=foundation`)}>
                 <figure className='image5'></figure>
                 <p>base</p>
             </div>
-            <div>
+            <div onClick={() => navigate(`/products/product_type=blush`)}>
                 <figure className='image6'></figure>
                 <p>blush</p>
             </div>
