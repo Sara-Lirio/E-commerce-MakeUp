@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonPrimary from '../../components/Buttons/primary'
 import InputMain from '../../components/Inputs/InputMain'
@@ -19,29 +19,46 @@ const StyledLogin = styled.main`
         padding-left: 14em;
     }
 
-    .linkCadastre{
+    .linkCadastre {
         text-decoration: none;
         color: var(--grafite-color);
         padding-left: .2em;
         font-weight: 700
     }
 
-    label{
+    label {
         font-weight: 600;
     }
 `
 
 const Login = () => {
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        console.log("submit", {user, password});
+        if(user === 'sara@gmail.com' && password === '123'){
+            alert("Login afetuado com sucesso")
+        } else {
+            alert("Usuário ou senha inválido(s)")
+        }
+    }
+
     return (
         <StyledLogin>
             <InputMain textLabel='E-mail'
                 tipo='primario' type='email'
-                placeholder='seuemail@email.com.br' />
+                placeholder='seuemail@email.com.br' 
+                value={user}
+                onChange={(e)=> setUser(e.target.value)}/>
             <InputMain textLabel='Senha'
                 tipo='primario' type='password'
-                placeholder='********' />
+                placeholder='********' 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}/>
             <p className='esqueciSenha'>Esqueci minha senha</p>
-            <ButtonPrimary text='Login' />
+            <ButtonPrimary text='Login' 
+            onClick={handleLogin}/>
             <p>Não possue conta? 
                 <Link to='/cadastre-se'
                 className='linkCadastre'
