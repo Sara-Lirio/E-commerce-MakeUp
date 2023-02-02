@@ -5,7 +5,6 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import Home from '../pages/Home'
-import Login from '../pages/Login'
 import ProductId from '../pages/Product'
 import ProductsType from '../pages/Product_Type'
 import Registration from '../pages/Registration'
@@ -18,7 +17,6 @@ const AppRoutes = () => {
         <Menu />
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/login' element={<Login/>} />
         <Route path='/cadastre-se' element={<Registration/>} />
         <Route path='/products/:product_type' element={<ProductsType/>} />
         <Route path='/shopping' element={<ShoppingCart/>} />

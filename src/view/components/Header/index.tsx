@@ -11,6 +11,7 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import Toast from 'react-bootstrap/Toast'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Login from '../ModalLogin'
 
 const HeaderStyle = styled.header`
     display: flex;
@@ -78,18 +79,22 @@ button:hover {
 
 const Header = () => {
     const [showOffCanvas, setShowOffCanvas] = useState(false);
-    const [showA, setShowA] = useState(true);
+    const [couponAlert, setCouponAlert] = useState(true);
+    const [showModalLogin, setShowModalLogin] = useState(false);
 
-    const handleCloseOffCanvas = () => setShowOffCanvas(false)
-    const handleShowOffCanvas = () => setShowOffCanvas(true)
+    const handleCloseOffCanvas = () => setShowOffCanvas(false);
+    const handleShowOffCanvas = () => setShowOffCanvas(true);
 
-    const toggleShowA = () => setShowA(!showA);
+    const handleCouponAlert = () => setCouponAlert(!couponAlert);
+
+    const handleCloseModalLogin = () => setShowModalLogin(false);
+    const handleShowModalLogin = () => setShowModalLogin(true);
 
     return (
         <HeaderStyle>
             <Row>
                 <Col className="mb-2">
-                    <Toast show={showA} onClose={toggleShowA} className='headerCoupon'>
+                    <Toast show={couponAlert} onClose={handleCouponAlert} className='headerCoupon'>
                         <Toast.Header>
                             <h2> 1ª compra? Ganhe 40% de desconto. #PRIMEIRACOMPRA.</h2>
                         </Toast.Header>
@@ -104,7 +109,11 @@ const Header = () => {
                 </Link>
                 <InputSearch placeholder='Pesquise aqui' />
                 <UserField account='Minha Conta'
-                    stateAccount='Entre ou Cadastre-se' />
+                    stateAccount='Entre ou Cadastre-se'
+                    onClick={handleShowModalLogin} />
+                <Login show={showModalLogin} onHide={handleCloseModalLogin}
+                onClick={handleCloseModalLogin} />
+
 
                 <button onClick={handleShowOffCanvas}>
                     <BsCart2 size={25} />

@@ -6,6 +6,7 @@ import { HiOutlineUserCircle } from "react-icons/hi2";
 export interface AccountProps {
     account?: string,
     stateAccount?: string,
+    onClick ?: () => void
 }
 
 const ContainerUserField = styled.div`
@@ -45,16 +46,16 @@ const ContainerUserField = styled.div`
    }
 `
 
-const UserField = ({account, stateAccount}:AccountProps) => {
+const UserField = ({account, stateAccount, onClick}:AccountProps) => {
     return (
         <ContainerUserField>
             <HiOutlineUserCircle size={30} />
-            <Link to='/login' className='linkUser'>
-            <div>
+           
+            <div onClick={onClick}>
                 <h3>{account}</h3>
                 <p>{stateAccount}</p>
             </div>
-            </Link>
+          
         </ContainerUserField>
     )
 }
