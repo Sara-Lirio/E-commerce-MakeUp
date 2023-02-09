@@ -5,9 +5,12 @@ import { Product } from '../../types/Product';
 import styled from 'styled-components'
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading';
+import MenuProoducts from '../../components/MenuProducts';
 
 const Container = styled.main`
   margin: 2em 8em;
+  // display:flex;
+  // justify-content: space-between;
 `
 
 const SectionProducts = styled.section`
@@ -15,6 +18,8 @@ const SectionProducts = styled.section`
   flex-wrap:wrap;
   justify-content: space-between;
   align-items: baseline;
+  max-width: 70%;
+  gap:10px;
 `
 
 const Product_Type = () => {
@@ -40,6 +45,7 @@ const Product_Type = () => {
 
   return (
     <Container>
+      {/* <MenuProoducts/> */}
       {products.length > 0 ?
       <SectionProducts>
         {products.map((item:any)=>(

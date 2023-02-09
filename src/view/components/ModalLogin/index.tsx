@@ -4,11 +4,54 @@ import ButtonPrimary from '../Buttons/primary'
 import InputMain from '../Inputs/InputMain'
 import { Link } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal';
+import { IoIosClose } from "react-icons/io";
 
 const ContainerModal = styled.section`
-    h3 {
-        color: red
+    font-family: var(--font-overpass);
+    text-transform:uppercase;
+
+    header {
+        display:flex;
+        justify-content: space-between;
+        padding: 1em 1em 1em 4em;
     }
+
+    h2 {
+        color:#d6a1a4;
+        font-size: 30px;
+        letter-spacing: 2px;
+        text-align:center;
+        padding: 1em 0 0 4em;
+    }
+
+    main {
+        padding: 1em 3em;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        height: 11em
+    }
+    
+    .esqueciSenha {
+        font-size:12px;
+        border-bottom: 1px solid var(--grafite-color);
+        margin-left: 20em;
+        text-align:center;
+        margin-top: 1em
+    }
+
+    footer {
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    p{
+        font-size:13px;
+        margin:2em;
+        color: var(--grafite-color)
+    }
+    
 
 `
 
@@ -33,13 +76,15 @@ const Login = ({ show, onHide, onClick }: ModalProps) => {
     }
 
     return (
-        <ContainerModal>
-            <Modal show={show} onHide={onHide} >
-                <Modal.Header closeButton>
-                    <h3>Login</h3>
-                </Modal.Header>
-                <Modal.Body>
-                    <InputMain textLabel='E-mail'
+
+        <Modal show={show} onHide={onHide} >
+            <ContainerModal>
+                <header>
+                    <h2>Login</h2>
+                    <IoIosClose size={35} onClick={onClick}/>
+                </header>
+                <main>
+                <InputMain textLabel='E-mail'
                         tipo='primario' type='email'
                         placeholder='seuemail@email.com.br'
                         value={user}
@@ -50,18 +95,19 @@ const Login = ({ show, onHide, onClick }: ModalProps) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} />
                     <p className='esqueciSenha'>Esqueci minha senha</p>
-                </Modal.Body>
+                </main>
+                <footer>
                 <ButtonPrimary text='Login'
                     onClick={handleLogin} />
-                <Modal.Footer>
+             
                     <p>Não possue conta?
                         <Link to='/cadastre-se'
                             className='linkCadastre'
-                        >Cadastre-se</Link>
-                    </p>
-                </Modal.Footer>
-            </Modal>
-        </ContainerModal>
+                        > Cadastre-se</Link>
+                    </p> 
+                </footer>
+            </ContainerModal>
+        </Modal>
     )
 }
 

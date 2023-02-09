@@ -1,5 +1,6 @@
 import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 const ContainerMenu = styled.div`
@@ -69,26 +70,34 @@ const ContainerMenu = styled.div`
 `
 
 const Menu = () => {
+    const navigate = useNavigate();
+
     return (
         <ContainerMenu>
             <ul>
                 <NavDropdown title="Maquiagem" id="basic-nav-dropdown">
                     <section className='makes'>
                         <div className='column1'>
-                            <NavDropdown.Item href="/blush">Blush</NavDropdown.Item>
-                            <NavDropdown.Item href="/bronzer">Bronzer</NavDropdown.Item>
-                            <NavDropdown.Item href="/eyebrow">Eyebrow</NavDropdown.Item>
-                            <NavDropdown.Item href="/delineadores">Delineadores</NavDropdown.Item>
-                            <NavDropdown.Item href="/sombras">Sombras</NavDropdown.Item>
-                            <NavDropdown.Item href="/corretivos">Corretivos</NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <div onClick={() => navigate(`/products/blush`)}>Blush</div>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <div onClick={() => navigate(`/products/bronzer`)}>Bronzer</div>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <div onClick={() => navigate(`/products/eyebrow`)}>Eyebrow</div>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>Delineadores</NavDropdown.Item>
+                            <NavDropdown.Item>Sombras</NavDropdown.Item>
+                            <NavDropdown.Item>Corretivos</NavDropdown.Item>
                         </div>
                         <div className='column2'>
-                            <NavDropdown.Item href="/bases">Base</NavDropdown.Item>
-                            <NavDropdown.Item href="/pomineral">Pó Mineral</NavDropdown.Item>
-                            <NavDropdown.Item href="/lapisboca">Lápis de Boca</NavDropdown.Item>
-                            <NavDropdown.Item href="/batons">Batons</NavDropdown.Item>
-                            <NavDropdown.Item href="/gloss">Gloss</NavDropdown.Item>
-                            <NavDropdown.Item href="/mascaras">Mascaras</NavDropdown.Item>
+                            <NavDropdown.Item>Base</NavDropdown.Item>
+                            <NavDropdown.Item>Pó Mineral</NavDropdown.Item>
+                            <NavDropdown.Item>Lápis de Boca</NavDropdown.Item>
+                            <NavDropdown.Item>Batons</NavDropdown.Item>
+                            <NavDropdown.Item>Gloss</NavDropdown.Item>
+                            <NavDropdown.Item>Mascaras</NavDropdown.Item>
                         </div>
                     </section>
                     <section className='verTudo'>
@@ -101,25 +110,27 @@ const Menu = () => {
                 <NavDropdown title="Marcas" id="basic-nav-dropdown">
                     <section className='makes'>
                         <div className='column1'>
-                            <NavDropdown.Item href="/blush">Almay</NavDropdown.Item>
-                            <NavDropdown.Item href="/bronzer">Alva</NavDropdown.Item>
-                            <NavDropdown.Item href="/eyebrow">Anna Sui</NavDropdown.Item>
-                            <NavDropdown.Item href="/delineadores">Annabelle</NavDropdown.Item>
-                            <NavDropdown.Item href="/sombras">Benefit</NavDropdown.Item>
-                            <NavDropdown.Item href="/corretivos">Boosh</NavDropdown.Item>
+                            <NavDropdown.Item>Almay</NavDropdown.Item>
+                            <NavDropdown.Item>Alva</NavDropdown.Item>
+                            <NavDropdown.Item>Anna Sui</NavDropdown.Item>
+                            <NavDropdown.Item>Annabelle</NavDropdown.Item>
+                            <NavDropdown.Item>Benefit</NavDropdown.Item>
+                            <NavDropdown.Item>Boosh</NavDropdown.Item>
                         </div>
                         <div className='column2'>
-                            <NavDropdown.Item href="/bases">Burt's Bees</NavDropdown.Item>
-                            <NavDropdown.Item href="/pomineral">Butter London</NavDropdown.Item>
-                            <NavDropdown.Item href="/lapisboca">C'est moi</NavDropdown.Item>
-                            <NavDropdown.Item href="/batons">Cargo Cosmetics</NavDropdown.Item>
-                            <NavDropdown.Item href="/gloss">China Glaze</NavDropdown.Item>
-                            <NavDropdown.Item href="/mascaras">Clinique</NavDropdown.Item>
+                            <NavDropdown.Item>Burt's Bees</NavDropdown.Item>
+                            <NavDropdown.Item>Butter London</NavDropdown.Item>
+                            <NavDropdown.Item>C'est moi</NavDropdown.Item>
+                            <NavDropdown.Item>Cargo Cosmetics</NavDropdown.Item>
+                            <NavDropdown.Item>China Glaze</NavDropdown.Item>
+                            <NavDropdown.Item>Clinique</NavDropdown.Item>
                         </div>
                     </section>
                     <section className='verTudo'>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/produtos">Ver mais</NavDropdown.Item>
+                    <NavDropdown.Item>
+                        <div onClick={() => navigate(`/products`)}>Ver mais</div>
+                        </NavDropdown.Item>
                     </section>
                 </NavDropdown>
             </ul>
