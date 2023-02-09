@@ -36,7 +36,7 @@ const ContainerMenu = styled.div`
 .dropdown-menu.show {
     background-color: var(--grafite-color);
     height: 15em;
-    width: 24em;
+    max-width: 30em;
     display:flex;
     padding: 1.3em 2em;
     flex-direction: column;
