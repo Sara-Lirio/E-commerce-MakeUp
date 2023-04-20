@@ -1,23 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import CarouselHome from '../../components/Carousel'
-import Categories from '../../components/Categories'
-import CouponSection from '../../components/CouponSection'
-import ProductsSectionNyx from '../../components/ProductsSection_nyx'
-import RegistrationForm from '../../components/RegistrationForm'
+
 import BannerNyx from '../../../assets/images/nyx-banner.webp'
 import styled from 'styled-components'
-import ProductsSectionClinique from '../../components/ProductsSection_clinique'
+
 import api from '../../service/api'
 import { Product } from '../../types/Product';
 
 const ImgBanner = styled.div`
-    margin: 0 5em;
-    display:flex;
-    justify-content:center;
+    // margin: 0 5em;
+    // display:flex;
+    // justify-content:center;
     
-    img {
-        width: 92%
-    }    
+    // img {
+    //     width: 92%
+    // }    
 `
 
 const Home = () => {
@@ -40,7 +36,7 @@ const Home = () => {
 
     return (
         <>
-            <CarouselHome />
+            {/* <CarouselHome />
             <Categories />
             <CouponSection />
 
@@ -56,7 +52,7 @@ const Home = () => {
             loading={loading} 
             products={products} />
 
-            <RegistrationForm />
+            <RegistrationForm /> */}
         </>
     )
 }

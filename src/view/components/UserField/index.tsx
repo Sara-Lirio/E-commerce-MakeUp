@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { HiOutlineUserCircle } from "react-icons/hi2";
 
 export interface AccountProps {
     account?: string,
     stateAccount?: string,
-    onClick ?: () => void
+    onClick?: () => void
 }
 
 const ContainerUserField = styled.div`
@@ -17,7 +16,6 @@ const ContainerUserField = styled.div`
     border-top: transparent;
     border-bottom: transparent;
     color: var(--grafite-color);
-    width: 12.8em;
     height:2em;
     padding: 0 1em;
     cursor:pointer;
@@ -25,7 +23,7 @@ const ContainerUserField = styled.div`
     h3 {
         letter-spacing: .2em;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 10px;
         padding-left:.8em;
         margin-bottom: 0;
     }
@@ -35,7 +33,7 @@ const ContainerUserField = styled.div`
     }
 
     p {
-        font-size: 8.7px;
+        font-size: 6.2px;
         letter-spacing: .11em;
         padding-left: 1.4em;
     }
@@ -44,18 +42,22 @@ const ContainerUserField = styled.div`
         text-decoration: none;
         color: var(--grafite-color)
    }
+
+   .userPhoto{
+        display: none;
+   }
 `
 
-const UserField = ({account, stateAccount, onClick}:AccountProps) => {
+const UserField = ({ account, stateAccount, onClick }: AccountProps) => {
     return (
         <ContainerUserField>
-            <HiOutlineUserCircle size={30} />
-           
+            <HiOutlineUserCircle className='userPhoto' />
+
             <div onClick={onClick}>
                 <h3>{account}</h3>
                 <p>{stateAccount}</p>
             </div>
-          
+
         </ContainerUserField>
     )
 }

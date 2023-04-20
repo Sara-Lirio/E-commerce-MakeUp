@@ -7,22 +7,20 @@ export interface InputProps {
 }
 
 const Fieldset = styled.fieldset`
-  border: .1em solid var(--grafite-color);
+  border: .1em solid gray;
   border-radius: .4em;
-  padding: .2em 0 .2em 1em;
-  width: 34em;
-  height:2em;
+  padding: .3em 2em .2em 2em;
   font-family: var(--font-overpass);
   color: var(--grafite-color);
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  font-size:.7em;
+  width:100%;
 
   input{
     border:none;
-    width: 34em;
     outline:none;
-    font-size:.9em;
     color: var(--grafite-color);
     font-family: var(--font-overpass);
   }

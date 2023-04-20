@@ -19,6 +19,4 @@
     max-width: 100%;
 }
 
-.row {
-     --bs-gutter-x: 0rem;
-    }
+a { color: inherit; } 

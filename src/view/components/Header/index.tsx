@@ -1,128 +1,46 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Logo from '../../../assets/logos/make_up-sf.png'
-import InputSearch from '../Inputs/InputSearch'
-import UserField from '../UserField'
-import { BsCart2 } from "react-icons/bs"
+
 import { Link } from 'react-router-dom'
-import Offcanvas from 'react-bootstrap/Offcanvas'
-import OffCanvasHome from '../OffCanvas-CardHome'
-import CloseButton from 'react-bootstrap/CloseButton';
-import Toast from 'react-bootstrap/Toast'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Login from '../ModalLogin'
+
+import InputSearch from '../Inputs/InputSearch'
+
+import Logo from '../../../assets/logos/make_up-sf.png'
+import ToastHeader from '../ToastHeader'
 
 const HeaderStyle = styled.header`
-    display: flex;
-    flex-direction: column;
    
-.headerMain {
+`
+const HeaderMain = styled.section`
     display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 8em;
-}
+    flex-direction: column;
+    align-items:center;
+    margin: 0 1.5em;
 
-h2{
-    font-size: 16px;
-    margin: .8em;
-    color: #FFF;
-    letter-spacing: 1px;
-}
-
-.toast-header {
-    background-color: transparent;
-    padding: 0
-}
-
-.btn-close {
-    background-color: transparent;
-}
-
-.btn-close:hover {
-    background-color: #d9989c;
-}
-
-.headerCoupon {
-    font-size: 10px;
+.containerImageLogo{
+    width:100%;
     display:flex;
-    align-items: center;
     justify-content: center;
-    background-color: #E7A6AA;
-    width: 100%;
-    border-radius: 0;
-    border-color: transparent;
-}
-
-img {
-    width: 13em;
-}
-
-button {
-    background-color: var(--cinza-color);
-    width: 2.7em;
-    height: 2.7em;
-    border: none;
-    border-radius: 2em;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    cursor:pointer;
-    color: var(--grafite-color);
 }
 
-button:hover {
-    background-color: var(--bege-color);
+.imageLogo {
+//    width: 70%;
 }
 `
 
 const Header = () => {
-    const [showOffCanvas, setShowOffCanvas] = useState(false);
-    const [couponAlert, setCouponAlert] = useState(true);
-    const [showModalLogin, setShowModalLogin] = useState(false);
-
-    const handleCloseOffCanvas = () => setShowOffCanvas(false);
-    const handleShowOffCanvas = () => setShowOffCanvas(true);
-
-    const handleCouponAlert = () => setCouponAlert(!couponAlert);
-
-    const handleCloseModalLogin = () => setShowModalLogin(false);
-    const handleShowModalLogin = () => setShowModalLogin(true);
-
     return (
         <HeaderStyle>
-            <Row>
-                <Col className="mb-2">
-                    <Toast show={couponAlert} onClose={handleCouponAlert} className='headerCoupon'>
-                        <Toast.Header>
-                            <h2> 1ª compra? Ganhe 40% de desconto. #PRIMEIRACOMPRA.</h2>
-                        </Toast.Header>
-                    </Toast>
-                </Col>
-            </Row>
-            <section className='headerMain'>
-                <Link to='/'>
-                    <figure>
-                        <img src={Logo} />
+            <ToastHeader />
+            <HeaderMain>
+                <Link to='/' className='containerImageLogo'>
+                    <figure >
+                        <img src={Logo} className='imageLogo' />
                     </figure>
                 </Link>
                 <InputSearch placeholder='Pesquise aqui' />
-                <UserField account='Minha Conta'
-                    stateAccount='Entre ou Cadastre-se'
-                    onClick={handleShowModalLogin} />
-                <Login show={showModalLogin} onHide={handleCloseModalLogin}
-                onClick={handleCloseModalLogin} />
-
-
-                <button onClick={handleShowOffCanvas}>
-                    <BsCart2 size={25} />
-                </button>
-
-                <Offcanvas show={showOffCanvas} onHide={handleCloseOffCanvas} placement='end'>
-                    <OffCanvasHome />
-                </Offcanvas>
-            </section>
+            </HeaderMain>
         </HeaderStyle>
     )
 }
