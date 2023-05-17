@@ -12,12 +12,9 @@ const ContainerUserField = styled.div`
     display:flex;
     font-family: var(--font-overpass);
     text-transform: uppercase;
-    border: 1px solid var(--grafite-color);
-    border-top: transparent;
-    border-bottom: transparent;
     color: var(--grafite-color);
     height:2em;
-    padding: 0 1em;
+    padding: .3em 1em;
     cursor:pointer;
 
     h3 {
@@ -41,10 +38,6 @@ const ContainerUserField = styled.div`
    .linkUser{
         text-decoration: none;
         color: var(--grafite-color)
-   }
-
-   .userPhoto{
-        display: none;
    }
 `
 

@@ -56,7 +56,7 @@ const ToastHeader = () => {
                 <h2 className='titleToast'>
                     1ª compra? Ganhe 40% de desconto. #PRIMEIRACOMPRA.
                 </h2>
-                <RiCloseFill onClick={removeToast}/>
+                <RiCloseFill data-testid="btnClose" onClick={removeToast}/>
             </ToastStyle>
         )}
         </>

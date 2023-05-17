@@ -23,11 +23,18 @@ const ContainerMenuMobile = styled.div`
 
         .containerMenuOptions{
            text-align:center;
+           margin
+           height: 8em;
+           display:flex;
+           flex-direction: column;
+           justify-content: space-between;
         }
 
         #basic-nav-dropdown{
-            color: var(--grafite-color);
+            color: gray;
             text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 3px;
         }
 `
 
