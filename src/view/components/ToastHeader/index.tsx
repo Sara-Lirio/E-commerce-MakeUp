@@ -25,7 +25,6 @@ const ToastStyle = styled.div`
             color: var(--bege-color);
         }
     }
-
     
 @media (min-width: 1024px) and (max-width: 1280px)  {
     padding: .7em 1.4em;
@@ -47,7 +46,7 @@ const ToastStyle = styled.div`
 
 const ToastHeader = () => {
     const [showToast, setShowToast] = useState(true);
-    const removeToast = () => {setShowToast((show) => !show)};
+    const removeToast = () => {setShowToast(false)};
 
     return (
         <>

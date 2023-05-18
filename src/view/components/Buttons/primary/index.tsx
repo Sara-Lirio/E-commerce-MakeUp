@@ -35,8 +35,8 @@ const StyleButton = styled.button<ButtonPrimaryProps>`
         background-color: var(--grafite-color);
         color: var(--branco-color);
     `: css`
-    background-color: var(--bege-color);
-    color: var(--grafite-color);
+        background-color: var(--bege-color);
+        color: var(--grafite-color);
     `}
 `
 

@@ -15,6 +15,7 @@ describe("ToastHeader", () => {
             </QueryClientProvider>
         )
     }
+
     it("Testando a renderização do componente", () => {
         renderComponent();
         expect(screen.getByText("1ª compra? Ganhe 40% de desconto. #PRIMEIRACOMPRA.")).toBeInTheDocument();

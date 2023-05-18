@@ -13,10 +13,9 @@ const ContainerUserField = styled.div`
     font-family: var(--font-overpass);
     text-transform: uppercase;
     color: var(--grafite-color);
-    height:2em;
-    padding: .3em 1em;
     cursor:pointer;
-
+    font-size: 1.5em;
+   
     h3 {
         letter-spacing: .2em;
         font-weight: 500;
@@ -39,6 +38,15 @@ const ContainerUserField = styled.div`
         text-decoration: none;
         color: var(--grafite-color)
    }
+
+   @media (min-width: 425px) and (max-width: 767px) {
+        padding-left: 2em;
+   }
+
+   @media (min-width: 768px) and (max-width: 1024px) {
+        padding-left: 7em;
+    }
+}
 `
 
 const UserField = ({ account, stateAccount, onClick }: AccountProps) => {

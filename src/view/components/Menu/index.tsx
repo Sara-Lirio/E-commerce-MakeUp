@@ -5,37 +5,26 @@ import styled from 'styled-components'
 import { TbMenu2 } from "react-icons/tb";
 
 const ContainerMenu = styled.div`
-    width: 100%;
+    
 `
 
 const ContainerMenuMobile = styled.div`
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: center;
-    margin: 1em; 
+    .buttonToMenu {
+        color:gray;
+        font-size: 1.2em;
+    }
 
-        .buttonToMenu {
-            color:gray;
-            font-size: 2em;
-            padding: .1em;
-        }
+@media (min-width: 375px) and (max-width: 767px) {
+    .buttonToMenu {
+    font-size: 1.5em;
+    }    
+}
 
-        .containerMenuOptions{
-           text-align:center;
-           margin
-           height: 8em;
-           display:flex;
-           flex-direction: column;
-           justify-content: space-between;
-        }
-
-        #basic-nav-dropdown{
-            color: gray;
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 3px;
-        }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .buttonToMenu {
+    font-size: 1.5em;
+    }    
+}
 `
 
 const Menu = () => {
